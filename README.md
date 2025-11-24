@@ -1,91 +1,42 @@
-# Flash Example
+# Responsive LED Pattern Controller
 
-## Description
+This project implements a dual-mode LED lighting controller for an 8-LED array using the Maxim Integrated (Analog Devices) microcontroller SDK. 
 
-This example demonstrates the usage of the Flash Controller (FLC) for general purpose storage.  The following use-cases are demonstrated:
+The key feature of this system is its **responsive input handling**. Unlike standard blink programs that freeze during delays, this program continuously polls the user button even while executing lighting animations, ensuring immediate pattern switching.
 
-1. Reading bytes from a specific location in Flash
-2. Writing and verifying a test pattern into Flash
-3. Modifying Flash contents
+## 🛠 Hardware Configuration
 
-Flash is **non-volatile** memory, meaning that it can retain state through power cycles.  However, application code is stored in Flash and the FLC has some limitations in how it can perform writes, so there are a few minor challenges to deal with when using it for general purpose storage.  This example demonstrates a simplified use-case that covers the most common scenarios.
+### Pin Mapping
+The code is configured for the following GPIO mappings:
 
-The _first_ time the example is run the application will use the FLC to write and verify a test pattern into the last page of flash.  It will also write a 32-bit "magic" sequence into the page.
+| Component | GPIO Port | Pin | Description |
+|-----------|-----------|-----|-------------|
+| **Button**| `GPIO2`   | `3` | Input (Pull-up enabled) |
+| **LED 1** | `GPIO1`   | `6` | Output |
+| **LED 2** | `GPIO0`   | `9` | Output |
+| **LED 3** | `GPIO0`   | `8` | Output |
+| **LED 4** | `GPIO0`   | `11`| Output |
+| **LED 5** | `GPIO0`   | `19`| Output |
+| **LED 6** | `GPIO3`   | `1` | Output |
+| **LED 7** | `GPIO0`   | `16`| Output |
+| **LED 8** | `GPIO0`   | `17`| Output |
 
-Once complete, the example will prompt the user to reset or power cycle the board.  This is to demonstrate that the written data is non-volatile and can survive a power cycle.
+## 💡 Operating Modes
 
-The _second_ time the example is run the application will see the "magic" 32-bit sequence in flash.  When this happens, the application will verify that the test pattern has survived the power cycle first.  Then, it will _modify_ the "magic" sequence _without_ modifying the rest of the test pattern.
+The system toggles between two distinct patterns when the button is pressed.
 
-## Software
+### Mode 0: Odd/Even Alternation
+* **Description:** Alternates between lighting up all even-indexed LEDs and all odd-indexed LEDs.
+* **Timing:** switches every 400ms.
 
-### Project Usage
+### Mode 1: Larson Scanner (Knight Rider)
+* **Description:** A single LED "bounces" back and forth from LED 1 to LED 8.
+* **Timing:** 120ms per frame.
 
-Universal instructions on building, flashing, and debugging this project can be found in the **[MSDK User Guide](https://analogdevicesinc.github.io/msdk/USERGUIDE/)**.
+## 🧠 Software Logic
 
-### Project-Specific Build Notes
+### The "Responsive Delay" Strategy
+To prevent the system from becoming unresponsive during LED delays, the standard `MXC_Delay` is wrapped in a custom function:
 
-* This project comes pre-configured for the MAX78000EVKIT.  See [Board Support Packages](https://analogdevicesinc.github.io/msdk/USERGUIDE/#board-support-packages) in the UG for instructions on changing the target board.
-
-## Hardware Connections
-
-If using the MAX78000EVKIT:
-
-- Connect a USB cable between the PC and the CN1 (USB/PWR) connector.
-- Connect pins 1 and 2 (P0_1) of the JH1 (UART 0 EN) header.
-- Open a terminal application on the PC and connect to the EV kit's console UART at 115200, 8-N-1.
-
-If using the MAX78000FTHR (FTHR_RevA)
-
-- Connect a USB cable between the PC and the CN1 (USB/PWR) connector.
-- Open a terminal application on the PC and connect to the EV kit's console UART at 115200, 8-N-1.
-
-## Expected Output
-
-After flashing and launching the example, an LED on the board will blink once every second.  This is the application waiting for PushButton 1 (PB1) to be pressed, and gives a window for a serial terminal to be connected.  After connecting the serial terminal, the application will output the following contents:
-
-```
-***** Flash Control Example *****
-Press Push Button 1 (PB1/SW1) to continue...
-
----(Critical)---
-Successfully erased page 64 of flash (addr 0x1007e000)
-Writing magic value 0xfeedbeef to address 0x1007e000...
-Done!
-Writing test pattern...
-Done!
-----------------
- -> Interrupt! (Flash operation done)
-
-
-Now reset or power cycle the board...
-
-```
-
-At this point, the "magic" and test pattern values have been written to flash.  Press SW5 to reset the board, after which the application will restart.  Push PB1 to continue the application again, which will print out the following contents:
-
-```
-***** Flash Control Example *****
-Press Push Button 1 (PB1/SW1) to continue...
-
-** Magic value 0xfeedbeef found at address 0x1007e000! **
-
-(Flash modifications have survived a reset and/or power cycle.)
-
-Verifying test pattern...
-Successfully verified test pattern!
-
----(Critical)---
-Erasing magic...
-Buffering page...
-Erasing page...
-Re-writing from buffer...
-New magic value: 0xabcd1234
-----------------
- -> Interrupt! (Flash operation done)
-
-Verifying test pattern...
-Successfully verified test pattern!
-
-Flash example successfully completed.
-
-```
+```c
+int delay_with_button_check(int total_ms);
