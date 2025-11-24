@@ -1,0 +1,10 @@
+main.c:44:7:leds_off	16	static
+main.c:51:7:led_on	0	static
+main.c:56:7:led_off	0	static
+main.c:64:7:init_button	24	static
+main.c:75:6:button_pressed	8	static
+main.c:106:6:delay_with_button_check	24	static
+main.c:139:7:pattern_odd_even	16	static
+main.c:167:7:pattern_larson	24	static
+main.c:186:7:setup_leds	16	static
+main.c:197:6:main	8	static

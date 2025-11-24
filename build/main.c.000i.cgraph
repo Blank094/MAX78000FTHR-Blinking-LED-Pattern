@@ -1,0 +1,2337 @@
+Trivially needed symbols: main/148 setup_leds/147 pattern_larson/146 pattern_odd_even/145 delay_with_button_check/144 button_pressed/143 init_button/142 led_off/141 led_on/140 leds_off/139 mode/138 led_cfgs/137
+
+
+Initial Symbol table:
+
+dir/154 (dir) @0705f0d8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  Aux: @070330a8
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pos/153 (pos) @0705f000
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  Aux: @0705f0d8
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (read) pattern_larson/146 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+MXC_Delay/152 (MXC_Delay) @07033498
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: delay_with_button_check/144 delay_with_button_check/144 delay_with_button_check/144 button_pressed/143 button_pressed/143 
+  Calls: 
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @070333f0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 init_button/142 
+  Calls: 
+MXC_GPIO_OutSet/150 (MXC_GPIO_OutSet) @07033348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: led_on/140 
+  Calls: 
+MXC_GPIO_OutClr/149 (MXC_GPIO_OutClr) @070332a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 led_off/141 leds_off/139 
+  Calls: 
+main/148 (main) @070331f8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @01c61e00
+  References: mode/138 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pattern_larson/146 pattern_odd_even/145 init_button/142 setup_leds/147 
+setup_leds/147 (setup_leds) @070330a8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @070331f8
+  References: led_cfgs/137 (addr) led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_OutClr/149 MXC_GPIO_Config/151 
+pattern_larson/146 (pattern_larson) @07011e70
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @070330a8
+  References: pos/153 (read) pos/153 (read) dir/154 (read) pos/153 (write) pos/153 (read) dir/154 (write) pos/153 (read) dir/154 (write) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_on/140 leds_off/139 
+pattern_odd_even/145 (pattern_odd_even) @0701bbd0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @07011e70
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_off/141 led_on/140 delay_with_button_check/144 led_off/141 led_on/140 
+delay_with_button_check/144 (delay_with_button_check) @0701b2a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701bbd0
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_Delay/152 MXC_Delay/152 leds_off/139 button_pressed/143 MXC_Delay/152 
+button_pressed/143 (button_pressed) @0701ba80
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701b2a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: delay_with_button_check/144 
+  Calls: MXC_Delay/152 MXC_Delay/152 
+init_button/142 (init_button) @0701b930
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701ba80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_Config/151 
+led_off/141 (led_off) @0701b7e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701b930
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutClr/149 
+led_on/140 (led_on) @0701b690
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701b7e0
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutSet/150 
+leds_off/139 (leds_off) @0701b540
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701b690
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 delay_with_button_check/144 
+  Calls: MXC_GPIO_OutClr/149 
+mode/138 (mode) @070184c8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @0701b540
+  References: 
+  Referring: delay_with_button_check/144 (read) delay_with_button_check/144 (write) main/148 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+led_cfgs/137 (led_cfgs) @07018480
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @070184c8
+  References: 
+  Referring: leds_off/139 (read) leds_off/139 (read) led_on/140 (read) led_on/140 (read) led_off/141 (read) led_off/141 (read) setup_leds/147 (addr) setup_leds/147 (read) setup_leds/147 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+ITM_CheckChar/136 (ITM_CheckChar) @06fd3e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_ReceiveChar/135 (ITM_ReceiveChar) @06fd3d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_SendChar/134 (ITM_SendChar) @06fd3bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Config/133 (SysTick_Config) @06fd3888
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SCB_GetFPUType/132 (SCB_GetFPUType) @06fd3738
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Load/131 (ARM_MPU_Load) @06fd35e8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_OrderedMemcpy/130 (ARM_MPU_OrderedMemcpy) @06fd3498
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegionEx/129 (ARM_MPU_SetRegionEx) @06fd3348
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegion/128 (ARM_MPU_SetRegion) @06fd31f8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_ClrRegion/127 (ARM_MPU_ClrRegion) @06fd30a8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Disable/126 (ARM_MPU_Disable) @06fc9d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Enable/125 (ARM_MPU_Enable) @06fc9f18
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SystemReset/124 (__NVIC_SystemReset) @06fc6738
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetVector/123 (__NVIC_GetVector) @06fc65e8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetVector/122 (__NVIC_SetVector) @06fc6498
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_DecodePriority/121 (NVIC_DecodePriority) @06fc6348
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_EncodePriority/120 (NVIC_EncodePriority) @06fc61f8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriority/119 (__NVIC_GetPriority) @06fc60a8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/118 (__NVIC_SetPriority) @06fb4f18
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetActive/117 (__NVIC_GetActive) @06fb4dc8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/116 (__NVIC_ClearPendingIRQ) @06fb4c78
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPendingIRQ/115 (__NVIC_SetPendingIRQ) @06fb4b28
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPendingIRQ/114 (__NVIC_GetPendingIRQ) @06fb49d8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_DisableIRQ/113 (__NVIC_DisableIRQ) @06fb4888
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetEnableIRQ/112 (__NVIC_GetEnableIRQ) @06fb4738
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/111 (__NVIC_EnableIRQ) @06fb45e8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriorityGrouping/110 (__NVIC_GetPriorityGrouping) @06fb4498
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriorityGrouping/109 (__NVIC_SetPriorityGrouping) @06fb4348
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMMLA/108 (__SMMLA) @06f5c540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSUB/107 (__QSUB) @06f5c3f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QADD/106 (__QADD) @06f5c2a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SEL/105 (__SEL) @06f5c150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSLDX/104 (__SMLSLDX) @06f5c000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSLD/103 (__SMLSLD) @06f53e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSDX/102 (__SMLSDX) @06f53d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSD/101 (__SMLSD) @06f53bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUSDX/100 (__SMUSDX) @06f53a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUSD/99 (__SMUSD) @06f53930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLALDX/98 (__SMLALDX) @06f537e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLALD/97 (__SMLALD) @06f53690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLADX/96 (__SMLADX) @06f53540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLAD/95 (__SMLAD) @06f533f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUADX/94 (__SMUADX) @06f532a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUAD/93 (__SMUAD) @06f53150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTAB16_RORn/92 (__SXTAB16_RORn) @06f53000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTAB16/91 (__SXTAB16) @06f48e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTB16_RORn/90 (__SXTB16_RORn) @06f48d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTB16/89 (__SXTB16) @06f48bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UXTAB16/88 (__UXTAB16) @06f48a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UXTB16/87 (__UXTB16) @06f48930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USADA8/86 (__USADA8) @06f48690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USAD8/85 (__USAD8) @06f48540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHSAX/84 (__UHSAX) @06f483f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQSAX/83 (__UQSAX) @06f482a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USAX/82 (__USAX) @06f48150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHSAX/81 (__SHSAX) @06f48000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSAX/80 (__QSAX) @06f43e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SSAX/79 (__SSAX) @06f43d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHASX/78 (__UHASX) @06f43bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQASX/77 (__UQASX) @06f43a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UASX/76 (__UASX) @06f43930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHASX/75 (__SHASX) @06f437e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QASX/74 (__QASX) @06f43690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SASX/73 (__SASX) @06f43540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHSUB16/72 (__UHSUB16) @06f433f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQSUB16/71 (__UQSUB16) @06f432a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USUB16/70 (__USUB16) @06f43150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHSUB16/69 (__SHSUB16) @06f43000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSUB16/68 (__QSUB16) @06f3ee70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SSUB16/67 (__SSUB16) @06f3ed20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHADD16/66 (__UHADD16) @06f3ebd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQADD16/65 (__UQADD16) @06f3ea80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UADD16/64 (__UADD16) @06f3e930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHADD16/63 (__SHADD16) @06f3e7e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QADD16/62 (__QADD16) @06f3e690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SADD16/61 (__SADD16) @06f3e540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHSUB8/60 (__UHSUB8) @06f3e3f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQSUB8/59 (__UQSUB8) @06f3e2a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USUB8/58 (__USUB8) @06f3e150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHSUB8/57 (__SHSUB8) @06f3e000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSUB8/56 (__QSUB8) @06f35e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SSUB8/55 (__SSUB8) @06f35d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHADD8/54 (__UHADD8) @06f35bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQADD8/53 (__UQADD8) @06f35a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UADD8/52 (__UADD8) @06f35930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHADD8/51 (__SHADD8) @06f357e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QADD8/50 (__QADD8) @06f35690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SADD8/49 (__SADD8) @06f35540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FPSCR/48 (__set_FPSCR) @06f353f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FPSCR/47 (__get_FPSCR) @06f352a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FAULTMASK/46 (__set_FAULTMASK) @06f35150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FAULTMASK/45 (__get_FAULTMASK) @06f35000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI_MAX/44 (__set_BASEPRI_MAX) @06f32e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI/43 (__set_BASEPRI) @06f32d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_BASEPRI/42 (__get_BASEPRI) @06f32bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_fault_irq/41 (__disable_fault_irq) @06f32a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_fault_irq/40 (__enable_fault_irq) @06f32930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PRIMASK/39 (__set_PRIMASK) @06f327e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PRIMASK/38 (__get_PRIMASK) @06f32690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_MSP/37 (__set_MSP) @06f32540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_MSP/36 (__get_MSP) @06f323f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PSP/35 (__set_PSP) @06f322a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PSP/34 (__get_PSP) @06f32150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_xPSR/33 (__get_xPSR) @06f32000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_APSR/32 (__get_APSR) @06f2ae70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_IPSR/31 (__get_IPSR) @06f2ad20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_CONTROL/30 (__set_CONTROL) @06f2abd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_CONTROL/29 (__get_CONTROL) @06f2aa80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_irq/28 (__disable_irq) @06f2a930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_irq/27 (__enable_irq) @06f2a7e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRT/26 (__STRT) @06f2a690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRHT/25 (__STRHT) @06f2a540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRBT/24 (__STRBT) @06f2a3f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRT/23 (__LDRT) @06f2a2a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRHT/22 (__LDRHT) @06f2a150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRBT/21 (__LDRBT) @06f2a000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RRX/20 (__RRX) @06ef4e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLREX/19 (__CLREX) @06ef4bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXW/18 (__STREXW) @06ef4a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXH/17 (__STREXH) @06ef4930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXB/16 (__STREXB) @06ef47e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXW/15 (__LDREXW) @06ef4690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXH/14 (__LDREXH) @06ef4540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXB/13 (__LDREXB) @06ef43f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLZ/12 (__CLZ) @06ef42a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RBIT/11 (__RBIT) @06ef4150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ROR/10 (__ROR) @06ee6a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REVSH/9 (__REVSH) @06ee6930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV16/8 (__REV16) @06ee67e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV/7 (__REV) @06ee6690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DMB/6 (__DMB) @06ee6540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DSB/5 (__DSB) @06ee6e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ISB/4 (__ISB) @06ee6d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__cmsis_start/3 (__cmsis_start) @06ee6bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_putchar_unlocked/2 (_putchar_unlocked) @06e73930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_getchar_unlocked/1 (_getchar_unlocked) @06e737e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__sputc_r/0 (__sputc_r) @06e735e8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: ITM_CheckChar/136 ITM_ReceiveChar/135 ITM_SendChar/134 SysTick_Config/133 SCB_GetFPUType/132 ARM_MPU_Load/131 ARM_MPU_OrderedMemcpy/130 ARM_MPU_SetRegionEx/129 ARM_MPU_SetRegion/128 ARM_MPU_ClrRegion/127 ARM_MPU_Disable/126 ARM_MPU_Enable/125 __NVIC_SystemReset/124 __NVIC_GetVector/123 __NVIC_SetVector/122 NVIC_DecodePriority/121 NVIC_EncodePriority/120 __NVIC_GetPriority/119 __NVIC_SetPriority/118 __NVIC_GetActive/117 __NVIC_ClearPendingIRQ/116 __NVIC_SetPendingIRQ/115 __NVIC_GetPendingIRQ/114 __NVIC_DisableIRQ/113 __NVIC_GetEnableIRQ/112 __NVIC_EnableIRQ/111 __NVIC_GetPriorityGrouping/110 __NVIC_SetPriorityGrouping/109 __SMMLA/108 __QSUB/107 __QADD/106 __SEL/105 __SMLSLDX/104 __SMLSLD/103 __SMLSDX/102 __SMLSD/101 __SMUSDX/100 __SMUSD/99 __SMLALDX/98 __SMLALD/97 __SMLADX/96 __SMLAD/95 __SMUADX/94 __SMUAD/93 __SXTAB16_RORn/92 __SXTAB16/91 __SXTB16_RORn/90 __SXTB16/89 __UXTAB16/88 __UXTB16/87 __USADA8/86 __USAD8/85 __UHSAX/84 __UQSAX/83 __USAX/82 __SHSAX/81 __QSAX/80 __SSAX/79 __UHASX/78 __UQASX/77 __UASX/76 __SHASX/75 __QASX/74 __SASX/73 __UHSUB16/72 __UQSUB16/71 __USUB16/70 __SHSUB16/69 __QSUB16/68 __SSUB16/67 __UHADD16/66 __UQADD16/65 __UADD16/64 __SHADD16/63 __QADD16/62 __SADD16/61 __UHSUB8/60 __UQSUB8/59 __USUB8/58 __SHSUB8/57 __QSUB8/56 __SSUB8/55 __UHADD8/54 __UQADD8/53 __UADD8/52 __SHADD8/51 __QADD8/50 __SADD8/49 __set_FPSCR/48 __get_FPSCR/47 __set_FAULTMASK/46 __get_FAULTMASK/45 __set_BASEPRI_MAX/44 __set_BASEPRI/43 __get_BASEPRI/42 __disable_fault_irq/41 __enable_fault_irq/40 __set_PRIMASK/39 __get_PRIMASK/38 __set_MSP/37 __get_MSP/36 __set_PSP/35 __get_PSP/34 __get_xPSR/33 __get_APSR/32 __get_IPSR/31 __set_CONTROL/30 __get_CONTROL/29 __disable_irq/28 __enable_irq/27 __STRT/26 __STRHT/25 __STRBT/24 __LDRT/23 __LDRHT/22 __LDRBT/21 __RRX/20 __CLREX/19 __STREXW/18 __STREXH/17 __STREXB/16 __LDREXW/15 __LDREXH/14 __LDREXB/13 __CLZ/12 __RBIT/11 __ROR/10 __REVSH/9 __REV16/8 __REV/7 __DMB/6 __DSB/5 __ISB/4 __cmsis_start/3 _putchar_unlocked/2 _getchar_unlocked/1 __sputc_r/0
+
+Reclaimed Symbol table:
+
+dir/154 (dir) @0705f0d8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pos/153 (pos) @0705f000
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (read) pattern_larson/146 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+MXC_Delay/152 (MXC_Delay) @07033498
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: delay_with_button_check/144 delay_with_button_check/144 delay_with_button_check/144 button_pressed/143 button_pressed/143 
+  Calls: 
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @070333f0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 init_button/142 
+  Calls: 
+MXC_GPIO_OutSet/150 (MXC_GPIO_OutSet) @07033348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: led_on/140 
+  Calls: 
+MXC_GPIO_OutClr/149 (MXC_GPIO_OutClr) @070332a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 led_off/141 leds_off/139 
+  Calls: 
+main/148 (main) @070331f8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: mode/138 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pattern_larson/146 pattern_odd_even/145 init_button/142 setup_leds/147 
+setup_leds/147 (setup_leds) @070330a8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (addr) led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_OutClr/149 MXC_GPIO_Config/151 
+pattern_larson/146 (pattern_larson) @07011e70
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: pos/153 (read) pos/153 (read) dir/154 (read) pos/153 (write) pos/153 (read) dir/154 (write) pos/153 (read) dir/154 (write) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_on/140 leds_off/139 
+pattern_odd_even/145 (pattern_odd_even) @0701bbd0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_off/141 led_on/140 delay_with_button_check/144 led_off/141 led_on/140 
+delay_with_button_check/144 (delay_with_button_check) @0701b2a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_Delay/152 MXC_Delay/152 leds_off/139 button_pressed/143 MXC_Delay/152 
+button_pressed/143 (button_pressed) @0701ba80
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: delay_with_button_check/144 
+  Calls: MXC_Delay/152 MXC_Delay/152 
+init_button/142 (init_button) @0701b930
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_Config/151 
+led_off/141 (led_off) @0701b7e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutClr/149 
+led_on/140 (led_on) @0701b690
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutSet/150 
+leds_off/139 (leds_off) @0701b540
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 delay_with_button_check/144 
+  Calls: MXC_GPIO_OutClr/149 
+mode/138 (mode) @070184c8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: delay_with_button_check/144 (read) delay_with_button_check/144 (write) main/148 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+led_cfgs/137 (led_cfgs) @07018480
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: leds_off/139 (read) leds_off/139 (read) led_on/140 (read) led_on/140 (read) led_off/141 (read) led_off/141 (read) setup_leds/147 (addr) setup_leds/147 (read) setup_leds/147 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+dir.0/154 (dir) @0705f0d8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pos.1/153 (pos) @0705f000
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (read) pattern_larson/146 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+MXC_Delay/152 (MXC_Delay) @07033498
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: delay_with_button_check/144 delay_with_button_check/144 delay_with_button_check/144 button_pressed/143 button_pressed/143 
+  Calls: 
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @070333f0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 init_button/142 
+  Calls: 
+MXC_GPIO_OutSet/150 (MXC_GPIO_OutSet) @07033348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: led_on/140 
+  Calls: 
+MXC_GPIO_OutClr/149 (MXC_GPIO_OutClr) @070332a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 led_off/141 leds_off/139 
+  Calls: 
+main/148 (main) @070331f8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: mode/138 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pattern_larson/146 pattern_odd_even/145 init_button/142 setup_leds/147 
+setup_leds/147 (setup_leds) @070330a8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (addr) led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_OutClr/149 MXC_GPIO_Config/151 
+pattern_larson/146 (pattern_larson) @07011e70
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: pos.1/153 (read) pos.1/153 (read) dir.0/154 (read) pos.1/153 (write) pos.1/153 (read) dir.0/154 (write) pos.1/153 (read) dir.0/154 (write) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_on/140 leds_off/139 
+pattern_odd_even/145 (pattern_odd_even) @0701bbd0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_off/141 led_on/140 delay_with_button_check/144 led_off/141 led_on/140 
+delay_with_button_check/144 (delay_with_button_check) @0701b2a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_Delay/152 MXC_Delay/152 leds_off/139 button_pressed/143 MXC_Delay/152 
+button_pressed/143 (button_pressed) @0701ba80
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: delay_with_button_check/144 
+  Calls: MXC_Delay/152 MXC_Delay/152 
+init_button/142 (init_button) @0701b930
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_Config/151 
+led_off/141 (led_off) @0701b7e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutClr/149 
+led_on/140 (led_on) @0701b690
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutSet/150 
+leds_off/139 (leds_off) @0701b540
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 delay_with_button_check/144 
+  Calls: MXC_GPIO_OutClr/149 
+mode/138 (mode) @070184c8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: delay_with_button_check/144 (read) delay_with_button_check/144 (write) main/148 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+led_cfgs/137 (led_cfgs) @07018480
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: leds_off/139 (read) leds_off/139 (read) led_on/140 (read) led_on/140 (read) led_off/141 (read) led_off/141 (read) setup_leds/147 (addr) setup_leds/147 (read) setup_leds/147 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+dir.0/154 (dir) @0705f0d8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pos.1/153 (pos) @0705f000
+  Type: variable definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: pattern_larson/146 (read) pattern_larson/146 (read) pattern_larson/146 (write) pattern_larson/146 (read) pattern_larson/146 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+MXC_Delay/152 (MXC_Delay) @07033498
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: delay_with_button_check/144 delay_with_button_check/144 delay_with_button_check/144 button_pressed/143 button_pressed/143 
+  Calls: 
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @070333f0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 init_button/142 
+  Calls: 
+MXC_GPIO_OutSet/150 (MXC_GPIO_OutSet) @07033348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: led_on/140 
+  Calls: 
+MXC_GPIO_OutClr/149 (MXC_GPIO_OutClr) @070332a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: setup_leds/147 led_off/141 leds_off/139 
+  Calls: 
+main/148 (main) @070331f8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: mode/138 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pattern_larson/146 pattern_odd_even/145 init_button/142 setup_leds/147 
+setup_leds/147 (setup_leds) @070330a8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (addr) led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_OutClr/149 MXC_GPIO_Config/151 
+pattern_larson/146 (pattern_larson) @07011e70
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: pos.1/153 (read) pos.1/153 (read) dir.0/154 (read) pos.1/153 (write) pos.1/153 (read) dir.0/154 (write) pos.1/153 (read) dir.0/154 (write) 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_on/140 leds_off/139 
+pattern_odd_even/145 (pattern_odd_even) @0701bbd0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: delay_with_button_check/144 led_off/141 led_on/140 delay_with_button_check/144 led_off/141 led_on/140 
+delay_with_button_check/144 (delay_with_button_check) @0701b2a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_Delay/152 MXC_Delay/152 leds_off/139 button_pressed/143 MXC_Delay/152 
+button_pressed/143 (button_pressed) @0701ba80
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: delay_with_button_check/144 
+  Calls: MXC_Delay/152 MXC_Delay/152 
+init_button/142 (init_button) @0701b930
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/148 
+  Calls: MXC_GPIO_Config/151 
+led_off/141 (led_off) @0701b7e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutClr/149 
+led_on/140 (led_on) @0701b690
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 pattern_odd_even/145 pattern_odd_even/145 
+  Calls: MXC_GPIO_OutSet/150 
+leds_off/139 (leds_off) @0701b540
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function flags: body
+  Called by: pattern_larson/146 delay_with_button_check/144 
+  Calls: MXC_GPIO_OutClr/149 
+mode/138 (mode) @070184c8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: delay_with_button_check/144 (read) delay_with_button_check/144 (write) main/148 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+led_cfgs/137 (led_cfgs) @07018480
+  Type: variable definition analyzed
+  Visibility: semantic_interposition public
+  References: 
+  Referring: leds_off/139 (read) leds_off/139 (read) led_on/140 (read) led_on/140 (read) led_off/141 (read) led_off/141 (read) setup_leds/147 (addr) setup_leds/147 (read) setup_leds/147 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+leds_off/178 (leds_off) @06f35d20
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 177
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function leds_off/178 is inline copy in pattern_odd_even/145
+  Clone of leds_off/139
+  Availability: local
+  Function flags: count:57959703 (estimated locally) body local
+  Called by: delay_with_button_check.part.0/174 (inlined) (57959703 (estimated locally),0.49 per call) 
+  Calls: MXC_GPIO_OutClr/149 (463729779 (estimated locally),3.89 per call) 
+leds_off/177 (leds_off) @06f35bd0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 176
+  previous sharing asm name: 178
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function leds_off/177 is inline copy in pattern_larson/146
+  Clone of leds_off/139
+  Availability: local
+  Function flags: count:521689477 (estimated locally) body local
+  Called by: delay_with_button_check.part.0/170 (inlined) (521689477 (estimated locally),0.49 per call) 
+  Calls: MXC_GPIO_OutClr/149 (4173985256 (estimated locally),3.89 per call) 
+leds_off/176 (leds_off) @06f35540
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 166
+  previous sharing asm name: 177
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function leds_off/176 is inline copy in delay_with_button_check/144
+  Clone of leds_off/139
+  Availability: local
+  Function flags: count:55807731 (estimated locally) body local
+  Called by: delay_with_button_check.part.0/156 (inlined) (55807731 (estimated locally),0.49 per call) 
+  Calls: MXC_GPIO_OutClr/149 (446512066 (estimated locally),3.89 per call) 
+__builtin_unreachable/175 (__builtin_unreachable) @06f35a80
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: delay_with_button_check/171 (0 (precise),0.00 per call) 
+  Calls: 
+delay_with_button_check.part.0/174 (delay_with_button_check.part.0) @06f35930
+  Type: function definition analyzed
+  Visibility: semantic_interposition artificial
+  next sharing asm name: 170
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function delay_with_button_check.part.0/174 is inline copy in pattern_odd_even/145
+  Clone of delay_with_button_check.part.0/156
+  Availability: local
+  Function flags: count:57959703 (estimated locally) body local split_part
+  Called by: delay_with_button_check/171 (inlined) (57959703 (estimated locally),0.49 per call) 
+  Calls: MXC_Delay/152 (57959703 (estimated locally),0.49 per call) leds_off/178 (inlined) (57959703 (estimated locally),0.49 per call) 
+button_pressed.part.0/173 (button_pressed.part.0) @06f357e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition artificial
+  next sharing asm name: 169
+  References: 
+  Referring: 
+  Function button_pressed.part.0/173 is inline copy in pattern_odd_even/145
+  Clone of button_pressed.part.0/161
+  Availability: local
+  Function flags: count:118237795 (estimated locally) body local split_part
+  Called by: button_pressed/172 (inlined) (118237795 (estimated locally),0.99 per call) 
+  Calls: MXC_Delay/152 (118237795 (estimated locally),0.99 per call) 
+button_pressed/172 (button_pressed) @06f35690
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 168
+  References: 
+  Referring: 
+  Function button_pressed/172 is inline copy in pattern_odd_even/145
+  Clone of button_pressed/160
+  Availability: local
+  Function flags: count:1053812781 (estimated locally) body local
+  Called by: delay_with_button_check/171 (inlined) (1053812781 (estimated locally),8.83 per call) 
+  Calls: button_pressed.part.0/173 (inlined) (118237795 (estimated locally),0.99 per call) MXC_Delay/152 (347758216 (estimated locally),2.92 per call) 
+delay_with_button_check/171 (delay_with_button_check) @06f35000
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 167
+  References: 
+  Referring: 
+  Function delay_with_button_check/171 is inline copy in pattern_odd_even/145
+  Clone of delay_with_button_check/144
+  Availability: local
+  Function flags: count:119292720 (estimated locally) body local
+  Called by: pattern_odd_even/145 (inlined) (119292720 (estimated locally),1.00 per call) 
+  Calls: MXC_Delay/152 (1053812781 (estimated locally),8.83 per call) button_pressed/172 (inlined) (1053812781 (estimated locally),8.83 per call) delay_with_button_check.part.0/174 (inlined) (57959703 (estimated locally),0.49 per call) __builtin_unreachable/175 (0 (precise),0.00 per call) 
+delay_with_button_check.part.0/170 (delay_with_button_check.part.0) @06f353f0
+  Type: function definition analyzed
+  Visibility: semantic_interposition artificial
+  next sharing asm name: 156
+  previous sharing asm name: 174
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function delay_with_button_check.part.0/170 is inline copy in pattern_larson/146
+  Clone of delay_with_button_check.part.0/156
+  Availability: local
+  Function flags: count:521689477 (estimated locally) body local split_part
+  Called by: delay_with_button_check/167 (inlined) (521689477 (estimated locally),0.49 per call) 
+  Calls: MXC_Delay/152 (521689477 (estimated locally),0.49 per call) leds_off/177 (inlined) (521689477 (estimated locally),0.49 per call) 
+button_pressed.part.0/169 (button_pressed.part.0) @06f352a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition artificial
+  next sharing asm name: 161
+  previous sharing asm name: 173
+  References: 
+  Referring: 
+  Function button_pressed.part.0/169 is inline copy in pattern_larson/146
+  Clone of button_pressed.part.0/161
+  Availability: local
+  Function flags: count:1064246549 (estimated locally) body local split_part
+  Called by: button_pressed/168 (inlined) (1064246549 (estimated locally),0.99 per call) 
+  Calls: MXC_Delay/152 (1064246549 (estimated locally),0.99 per call) 
+button_pressed/168 (button_pressed) @06f35150
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 160
+  previous sharing asm name: 172
+  References: 
+  Referring: 
+  Function button_pressed/168 is inline copy in pattern_larson/146
+  Clone of button_pressed/160
+  Availability: local
+  Function flags: count:9485263289 (estimated locally) body local
+  Called by: delay_with_button_check/167 (inlined) (9485263289 (estimated locally),8.83 per call) 
+  Calls: button_pressed.part.0/169 (inlined) (1064246549 (estimated locally),0.99 per call) MXC_Delay/152 (3130136871 (estimated locally),2.92 per call) 
+delay_with_button_check/167 (delay_with_button_check) @06f35e70
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 144
+  previous sharing asm name: 171
+  References: 
+  Referring: 
+  Function delay_with_button_check/167 is inline copy in pattern_larson/146
+  Clone of delay_with_button_check/144
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local
+  Called by: pattern_larson/146 (inlined) (1073741824 (estimated locally),1.00 per call) 
+  Calls: MXC_Delay/152 (9485263289 (estimated locally),8.83 per call) button_pressed/168 (inlined) (9485263289 (estimated locally),8.83 per call) delay_with_button_check.part.0/170 (inlined) (521689477 (estimated locally),0.49 per call) MXC_Delay/152 (228991319 (estimated locally),0.21 per call) 
+leds_off/166 (leds_off) @06f32e70
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 139
+  previous sharing asm name: 176
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function leds_off/166 is inline copy in pattern_larson/146
+  Clone of leds_off/139
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local
+  Called by: pattern_larson/146 (inlined) (1073741824 (estimated locally),1.00 per call) 
+  Calls: MXC_GPIO_OutClr/149 (8590900794 (estimated locally),8.00 per call) 
+led_on/165 (led_on) @06f32d20
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 164
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function led_on/165 is inline copy in pattern_larson/146
+  Clone of led_on/140
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local
+  Called by: pattern_larson/146 (inlined) (1073741824 (estimated locally),1.00 per call) 
+  Calls: MXC_GPIO_OutSet/150 (1073741824 (estimated locally),1.00 per call) 
+led_on/164 (led_on) @06f32bd0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 163
+  previous sharing asm name: 165
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function led_on/164 is inline copy in pattern_odd_even/145
+  Clone of led_on/140
+  Availability: local
+  Function flags: count:314968204 (estimated locally) body local
+  Called by: pattern_odd_even.part.0/157 (inlined) (314968204 (estimated locally),2.64 per call) 
+  Calls: MXC_GPIO_OutSet/150 (314968204 (estimated locally),2.64 per call) 
+led_on/163 (led_on) @06f32a80
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 140
+  previous sharing asm name: 164
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function led_on/163 is inline copy in pattern_odd_even/145
+  Clone of led_on/140
+  Availability: local
+  Function flags: count:477224552 (estimated locally) body local
+  Called by: pattern_odd_even/145 (inlined) (477224552 (estimated locally),4.00 per call) 
+  Calls: MXC_GPIO_OutSet/150 (477224552 (estimated locally),4.00 per call) 
+led_off/162 (led_off) @06f32930
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 159
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function led_off/162 is inline copy in pattern_odd_even/145
+  Clone of led_off/141
+  Availability: local
+  Function flags: count:314968204 (estimated locally) body local
+  Called by: pattern_odd_even.part.0/157 (inlined) (314968204 (estimated locally),2.64 per call) 
+  Calls: MXC_GPIO_OutClr/149 (314968204 (estimated locally),2.64 per call) 
+button_pressed.part.0/161 (button_pressed.part.0) @06f327e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition artificial
+  next sharing asm name: 155
+  previous sharing asm name: 169
+  References: 
+  Referring: 
+  Function button_pressed.part.0/161 is inline copy in delay_with_button_check/144
+  Clone of button_pressed.part.0/155
+  Availability: local
+  Function flags: count:113847773 (estimated locally) body local split_part
+  Called by: button_pressed/160 (inlined) (113847773 (estimated locally),0.99 per call) 
+  Calls: MXC_Delay/152 (113847773 (estimated locally),0.99 per call) 
+button_pressed/160 (button_pressed) @06f32690
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 143
+  previous sharing asm name: 168
+  References: 
+  Referring: 
+  Function button_pressed/160 is inline copy in delay_with_button_check/144
+  Clone of button_pressed/143
+  Availability: local
+  Function flags: count:1014686026 (estimated locally) body local
+  Called by: delay_with_button_check/144 (inlined) (1014686026 (estimated locally),8.83 per call) 
+  Calls: MXC_Delay/152 (334846387 (estimated locally),2.92 per call) button_pressed.part.0/161 (inlined) (113847773 (estimated locally),0.99 per call) 
+led_off/159 (led_off) @06f2aa80
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 141
+  previous sharing asm name: 162
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Function led_off/159 is inline copy in pattern_odd_even/145
+  Clone of led_off/141
+  Availability: local
+  Function flags: count:477224552 (estimated locally) body local
+  Called by: pattern_odd_even/145 (inlined) (477224552 (estimated locally),4.00 per call) 
+  Calls: MXC_GPIO_OutClr/149 (477224552 (estimated locally),4.00 per call) 
+pattern_larson.part.0/158 (pattern_larson.part.0) @06f2ae70
+  Type: function definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly artificial
+  References: pos.1/153 (read) dir.0/154 (read) pos.1/153 (write) dir.0/154 (write) dir.0/154 (write) 
+  Referring: 
+  Function pattern_larson.part.0/158 is inline copy in pattern_larson/146
+  Availability: local
+  Function flags: count:708669600 (estimated locally) body local split_part nonfreeing_fn
+  Called by: pattern_larson/146 (inlined) (708669600 (estimated locally),0.66 per call) 
+  Calls: 
+pattern_odd_even.part.0/157 (pattern_odd_even.part.0) @06f2a7e0
+  Type: function definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Function pattern_odd_even.part.0/157 is inline copy in pattern_odd_even/145
+  Availability: local
+  Function flags: count:78733195 (estimated locally) body local split_part
+  Called by: pattern_odd_even/145 (inlined) (78733195 (estimated locally),0.66 per call) 
+  Calls: led_on/164 (inlined) (314968204 (estimated locally),2.64 per call) led_off/162 (inlined) (314968204 (estimated locally),2.64 per call) delay_with_button_check/144 (78733195 (estimated locally),0.66 per call) 
+delay_with_button_check.part.0/156 (delay_with_button_check.part.0) @06f2a690
+  Type: function definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly artificial
+  previous sharing asm name: 170
+  References: mode/138 (read) mode/138 (write) 
+  Referring: 
+  Function delay_with_button_check.part.0/156 is inline copy in delay_with_button_check/144
+  Availability: local
+  Function flags: count:55807731 (estimated locally) body local split_part
+  Called by: delay_with_button_check/144 (inlined) (55807731 (estimated locally),0.49 per call) 
+  Calls: leds_off/176 (inlined) (55807731 (estimated locally),0.49 per call) MXC_Delay/152 (55807731 (estimated locally),0.49 per call) 
+button_pressed.part.0/155 (button_pressed.part.0) @06f2a3f0
+  Type: function definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly artificial
+  previous sharing asm name: 161
+  References: 
+  Referring: 
+  Function button_pressed.part.0/155 is inline copy in button_pressed/143
+  Availability: local
+  Function flags: count:118111600 (estimated locally) body local split_part
+  Called by: button_pressed/143 (inlined) (118111600 (estimated locally),0.11 per call) 
+  Calls: MXC_Delay/152 (118111600 (estimated locally),0.11 per call) 
+dir.0/154 (dir) @0705f0d8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly
+  References: 
+  Referring: pattern_larson.part.0/158 (read) pattern_larson.part.0/158 (write) pattern_larson.part.0/158 (write) 
+  Availability: available
+  Varpool flags: initialized used-by-single-function
+pos.1/153 (pos) @0705f000
+  Type: variable definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly
+  References: 
+  Referring: pattern_larson.part.0/158 (write) pattern_larson.part.0/158 (read) pattern_larson/146 (read) 
+  Availability: available
+  Varpool flags: initialized used-by-single-function
+MXC_Delay/152 (MXC_Delay) @07033498
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: delay_with_button_check.part.0/174 (57959703 (estimated locally),0.49 per call) button_pressed.part.0/173 (118237795 (estimated locally),0.99 per call) button_pressed/172 (347758216 (estimated locally),2.92 per call) delay_with_button_check/171 (1053812781 (estimated locally),8.83 per call) delay_with_button_check.part.0/170 (521689477 (estimated locally),0.49 per call) button_pressed.part.0/169 (1064246549 (estimated locally),0.99 per call) button_pressed/168 (3130136871 (estimated locally),2.92 per call) delay_with_button_check/167 (9485263289 (estimated locally),8.83 per call) delay_with_button_check/167 (228991319 (estimated locally),0.21 per call) button_pressed.part.0/161 (113847773 (estimated locally),0.99 per call) button_pressed/160 (334846387 (estimated locally),2.92 per call) delay_with_button_check/144 (24496346 (estimated locally),0.21 per call) delay_with_button_check/144 (1014686026 (estimated locally),8.83 per call) delay_with_button_check.part.0/156 (55807731 (estimated locally),0.49 per call) button_pressed/143 (347387056 (estimated locally),0.33 per call) button_pressed.part.0/155 (118111600 (estimated locally),0.11 per call) 
+  Calls: 
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @070333f0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: setup_leds/147 (954449105 (estimated locally),8.00 per call) init_button/142 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+MXC_GPIO_OutSet/150 (MXC_GPIO_OutSet) @07033348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: led_on/165 (1073741824 (estimated locally),1.00 per call) led_on/164 (314968204 (estimated locally),2.64 per call) led_on/163 (477224552 (estimated locally),4.00 per call) led_on/140 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+MXC_GPIO_OutClr/149 (MXC_GPIO_OutClr) @070332a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: leds_off/178 (463729779 (estimated locally),3.89 per call) leds_off/177 (4173985256 (estimated locally),3.89 per call) leds_off/176 (446512066 (estimated locally),3.89 per call) leds_off/166 (8590900794 (estimated locally),8.00 per call) led_off/162 (314968204 (estimated locally),2.64 per call) led_off/159 (477224552 (estimated locally),4.00 per call) setup_leds/147 (954449105 (estimated locally),8.00 per call) led_off/141 (1073741824 (estimated locally),1.00 per call) leds_off/139 (954449105 (estimated locally),8.00 per call) 
+  Calls: 
+main/148 (main) @070331f8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: mode/138 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body only_called_at_startup executed_once
+  Called by: 
+  Calls: pattern_larson/146 (354334800 (estimated locally),33.33 per call) pattern_odd_even/145 (719407025 (estimated locally),67.67 per call) init_button/142 (10631108 (estimated locally),1.00 per call) setup_leds/147 (10631108 (estimated locally),1.00 per call) 
+setup_leds/147 (setup_leds) @070330a8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: led_cfgs/137 (addr) led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:119292720 (estimated locally) body
+  Called by: main/148 (10631108 (estimated locally),1.00 per call) 
+  Calls: MXC_GPIO_OutClr/149 (954449105 (estimated locally),8.00 per call) MXC_GPIO_Config/151 (954449105 (estimated locally),8.00 per call) 
+pattern_larson/146 (pattern_larson) @07011e70
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: pos.1/153 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: main/148 (354334800 (estimated locally),33.33 per call) 
+  Calls: pattern_larson.part.0/158 (inlined) (708669600 (estimated locally),0.66 per call) delay_with_button_check/167 (inlined) (1073741824 (estimated locally),1.00 per call) led_on/165 (inlined) (1073741824 (estimated locally),1.00 per call) leds_off/166 (inlined) (1073741824 (estimated locally),1.00 per call) 
+pattern_odd_even/145 (pattern_odd_even) @0701bbd0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:119292720 (estimated locally) body
+  Called by: main/148 (719407025 (estimated locally),67.67 per call) 
+  Calls: pattern_odd_even.part.0/157 (inlined) (78733195 (estimated locally),0.66 per call) delay_with_button_check/171 (inlined) (119292720 (estimated locally),1.00 per call) led_off/159 (inlined) (477224552 (estimated locally),4.00 per call) led_on/163 (inlined) (477224552 (estimated locally),4.00 per call) 
+delay_with_button_check/144 (delay_with_button_check) @0701b2a0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  previous sharing asm name: 167
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:114863530 (estimated locally) body
+  Called by: pattern_odd_even.part.0/157 (78733195 (estimated locally),0.66 per call) 
+  Calls: MXC_Delay/152 (24496346 (estimated locally),0.21 per call) delay_with_button_check.part.0/156 (inlined) (55807731 (estimated locally),0.49 per call) button_pressed/160 (inlined) (1014686026 (estimated locally),8.83 per call) MXC_Delay/152 (1014686026 (estimated locally),8.83 per call) 
+button_pressed/143 (button_pressed) @0701ba80
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  previous sharing asm name: 160
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1052688053 (estimated locally) body
+  Called by: 
+  Calls: button_pressed.part.0/155 (inlined) (118111600 (estimated locally),0.11 per call) MXC_Delay/152 (347387056 (estimated locally),0.33 per call) 
+init_button/142 (init_button) @0701b930
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: main/148 (10631108 (estimated locally),1.00 per call) 
+  Calls: MXC_GPIO_Config/151 (1073741824 (estimated locally),1.00 per call) 
+led_off/141 (led_off) @0701b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  previous sharing asm name: 159
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_OutClr/149 (1073741824 (estimated locally),1.00 per call) 
+led_on/140 (led_on) @0701b690
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  previous sharing asm name: 163
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_OutSet/150 (1073741824 (estimated locally),1.00 per call) 
+leds_off/139 (leds_off) @0701b540
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  previous sharing asm name: 166
+  References: led_cfgs/137 (read) led_cfgs/137 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:119292720 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_OutClr/149 (954449105 (estimated locally),8.00 per call) 
+mode/138 (mode) @070184c8
+  Type: variable definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: 
+  Referring: delay_with_button_check.part.0/156 (write) delay_with_button_check.part.0/156 (read) main/148 (read) delay_with_button_check.part.0/170 (read) delay_with_button_check.part.0/170 (write) delay_with_button_check.part.0/174 (read) delay_with_button_check.part.0/174 (write) 
+  Availability: available
+  Varpool flags: initialized
+led_cfgs/137 (led_cfgs) @07018480
+  Type: variable definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: 
+  Referring: led_on/140 (read) led_on/140 (read) led_off/141 (read) led_off/141 (read) leds_off/139 (read) leds_off/139 (read) setup_leds/147 (addr) setup_leds/147 (read) setup_leds/147 (read) led_off/159 (read) led_off/159 (read) led_off/162 (read) led_off/162 (read) led_on/163 (read) led_on/163 (read) led_on/164 (read) led_on/164 (read) led_on/165 (read) led_on/165 (read) leds_off/166 (read) leds_off/166 (read) leds_off/176 (read) leds_off/176 (read) leds_off/177 (read) leds_off/177 (read) leds_off/178 (read) leds_off/178 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+updating call of delay_with_button_check/144 -> leds_off/176: leds_off ();
+  updated to:leds_off ();
+updating call of pattern_odd_even/145 -> led_off/159: led_off (i_4);
+  updated to:led_off (i_4);
+updating call of pattern_odd_even/145 -> led_on/163: led_on (i_4);
+  updated to:led_on (i_4);
+updating call of pattern_odd_even/145 -> button_pressed/160: _21 = button_pressed ();
+  updated to:_21 = button_pressed ();
+updating call of pattern_odd_even/145 -> __builtin_unreachable/175: MXC_Delay (_26);
+  updated to:__builtin_unreachable ();
+updating call of pattern_odd_even/145 -> led_on/164: led_on (i_44);
+  updated to:led_on (i_44);
+updating call of pattern_larson/146 -> delay_with_button_check/171: _2 = delay_with_button_check (120);
+  updated to:_2 = delay_with_button_check (120);
+updating call of pattern_larson/146 -> leds_off/166: leds_off ();
+  updated to:leds_off ();
+updating call of pattern_larson/146 -> button_pressed/160: _11 = button_pressed ();
+  updated to:_11 = button_pressed ();
+updating call of pattern_larson/146 -> leds_off/178: leds_off ();
+  updated to:leds_off ();
+Trivially needed variables: dir.0/154 pos.1/153 mode/138 led_cfgs/137
+Removing variables:
+
+Final Symbol table:
+
+__builtin_unreachable/175 (__builtin_unreachable) @06f35a80
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+dir.0/154 (dir) @0705f0d8
+  Type: variable definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly asm_written section:.data.dir.0 (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized used-by-single-function
+pos.1/153 (pos) @0705f000
+  Type: variable definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly asm_written section:.bss.pos.1 (implicit_section)
+  Aux: @0705f0d8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized used-by-single-function
+MXC_Delay/152 (MXC_Delay) @07033498
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @070333f0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_OutSet/150 (MXC_GPIO_OutSet) @07033348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_OutClr/149 (MXC_GPIO_OutClr) @070332a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+main/148 (main) @070331f8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) only_called_at_startup executed_once
+  Called by: 
+  Calls: 
+setup_leds/147 (setup_leds) @070330a8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.setup_leds (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:119292720 (estimated locally)
+  Called by: 
+  Calls: 
+pattern_larson/146 (pattern_larson) @07011e70
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.pattern_larson (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+pattern_odd_even/145 (pattern_odd_even) @0701bbd0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.pattern_odd_even (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:119292720 (estimated locally)
+  Called by: 
+  Calls: 
+delay_with_button_check/144 (delay_with_button_check) @0701b2a0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.delay_with_button_check (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:114863530 (estimated locally)
+  Called by: 
+  Calls: 
+button_pressed/143 (button_pressed) @0701ba80
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.button_pressed (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1052688053 (estimated locally)
+  Called by: 
+  Calls: 
+init_button/142 (init_button) @0701b930
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.init_button (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+led_off/141 (led_off) @0701b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.led_off (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+led_on/140 (led_on) @0701b690
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.led_on (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+leds_off/139 (leds_off) @0701b540
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.leds_off (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:119292720 (estimated locally)
+  Called by: 
+  Calls: 
+mode/138 (mode) @070184c8
+  Type: variable definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.bss.mode (implicit_section)
+  Aux: @0705f000
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+led_cfgs/137 (led_cfgs) @07018480
+  Type: variable definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.rodata.led_cfgs (implicit_section)
+  Aux: @070184c8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

@@ -1,0 +1,2122 @@
+Trivially needed symbols: PB_IsPressedAny/149 PB_Get/148 PB_IntClear/147 PB_IntDisable/146 PB_IntEnable/145 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 PB_Init/142
+
+
+Initial Symbol table:
+
+MXC_GPIO_InGet/159 (MXC_GPIO_InGet) @064d8348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 
+  Calls: 
+MXC_GPIO_ClearFlags/158 (MXC_GPIO_ClearFlags) @064d82a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntClear/147 
+  Calls: 
+mxc_assert/157 (mxc_assert) @064d81f8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 PB_IntClear/147 PB_IntDisable/146 PB_IntEnable/145 
+  Calls: 
+MXC_GPIO_DisableInt/156 (MXC_GPIO_DisableInt) @064d8150
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntDisable/146 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_EnableInt/155 (MXC_GPIO_EnableInt) @064d80a8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntEnable/145 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_IntConfig/154 (MXC_GPIO_IntConfig) @064d8000
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_RegisterCallback/153 (MXC_GPIO_RegisterCallback) @064c37e0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 PB_RegisterCallback/143 
+  Calls: 
+num_pbs/152 (num_pbs) @064c06c0
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (read) PB_RegisterCallback/143 (read) PB_RegisterCallbackRiseFall/144 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_IsPressedAny/149 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @064c3738
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Init/142 
+  Calls: 
+pb_pin/150 (pb_pin) @064c0630
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (addr) PB_IntEnable/145 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_Get/148 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+PB_IsPressedAny/149 (PB_IsPressedAny) @064c35e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @01c61e00
+  References: num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PB_Get/148 
+PB_Get/148 (PB_Get) @064c32a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c35e8
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: PB_IsPressedAny/149 
+  Calls: MXC_GPIO_InGet/159 mxc_assert/157 
+PB_IntClear/147 (PB_IntClear) @064c3150
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c32a0
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_ClearFlags/158 mxc_assert/157 
+PB_IntDisable/146 (PB_IntDisable) @064c3f18
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c3150
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_DisableInt/156 mxc_assert/157 
+PB_IntEnable/145 (PB_IntEnable) @064c3dc8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c3f18
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_EnableInt/155 mxc_assert/157 
+PB_RegisterCallbackRiseFall/144 (PB_RegisterCallbackRiseFall) @064c3c78
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c3dc8
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_RegisterCallback/143 (PB_RegisterCallback) @064c3b28
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c3c78
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_Init/142 (PB_Init) @064c39d8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  Aux: @064c3b28
+  References: pb_pin/150 (addr) num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_Config/151 
+MXC_SYS_In_Crit_Section/141 (MXC_SYS_In_Crit_Section) @06490150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_SYS_Crit_Exit/140 (MXC_SYS_Crit_Exit) @06490e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_SYS_Crit_Enter/139 (MXC_SYS_Crit_Enter) @06490d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_mxc_crit_get_state/138 (_mxc_crit_get_state) @06490bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_state/137 (_state) @0648b630
+  Type: variable definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+ITM_CheckChar/136 (ITM_CheckChar) @06422e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_ReceiveChar/135 (ITM_ReceiveChar) @06422d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_SendChar/134 (ITM_SendChar) @06422bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Config/133 (SysTick_Config) @06422888
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SCB_GetFPUType/132 (SCB_GetFPUType) @06422738
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Load/131 (ARM_MPU_Load) @064225e8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_OrderedMemcpy/130 (ARM_MPU_OrderedMemcpy) @06422498
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegionEx/129 (ARM_MPU_SetRegionEx) @06422348
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegion/128 (ARM_MPU_SetRegion) @064221f8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_ClrRegion/127 (ARM_MPU_ClrRegion) @064220a8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Disable/126 (ARM_MPU_Disable) @0641ad20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Enable/125 (ARM_MPU_Enable) @0641af18
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SystemReset/124 (__NVIC_SystemReset) @06415738
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetVector/123 (__NVIC_GetVector) @064155e8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetVector/122 (__NVIC_SetVector) @06415498
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_DecodePriority/121 (NVIC_DecodePriority) @06415348
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_EncodePriority/120 (NVIC_EncodePriority) @064151f8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriority/119 (__NVIC_GetPriority) @064150a8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/118 (__NVIC_SetPriority) @0640af18
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetActive/117 (__NVIC_GetActive) @0640adc8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/116 (__NVIC_ClearPendingIRQ) @0640ac78
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPendingIRQ/115 (__NVIC_SetPendingIRQ) @0640ab28
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPendingIRQ/114 (__NVIC_GetPendingIRQ) @0640a9d8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_DisableIRQ/113 (__NVIC_DisableIRQ) @0640a888
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetEnableIRQ/112 (__NVIC_GetEnableIRQ) @0640a738
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/111 (__NVIC_EnableIRQ) @0640a5e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition
+  Aux: @064c3c78
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+__NVIC_GetPriorityGrouping/110 (__NVIC_GetPriorityGrouping) @0640a498
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriorityGrouping/109 (__NVIC_SetPriorityGrouping) @0640a348
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMMLA/108 (__SMMLA) @063c27e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSUB/107 (__QSUB) @063c2690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QADD/106 (__QADD) @063c2540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SEL/105 (__SEL) @063c23f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSLDX/104 (__SMLSLDX) @063c22a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSLD/103 (__SMLSLD) @063c2150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSDX/102 (__SMLSDX) @063c2000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLSD/101 (__SMLSD) @063bae70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUSDX/100 (__SMUSDX) @063bad20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUSD/99 (__SMUSD) @063babd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLALDX/98 (__SMLALDX) @063baa80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLALD/97 (__SMLALD) @063ba930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLADX/96 (__SMLADX) @063ba7e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMLAD/95 (__SMLAD) @063ba690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUADX/94 (__SMUADX) @063ba540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SMUAD/93 (__SMUAD) @063ba3f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTAB16_RORn/92 (__SXTAB16_RORn) @063ba2a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTAB16/91 (__SXTAB16) @063ba150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTB16_RORn/90 (__SXTB16_RORn) @063ba000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SXTB16/89 (__SXTB16) @063b2e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UXTAB16/88 (__UXTAB16) @063b2d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UXTB16/87 (__UXTB16) @063b2bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USADA8/86 (__USADA8) @063b2930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USAD8/85 (__USAD8) @063b27e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHSAX/84 (__UHSAX) @063b2690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQSAX/83 (__UQSAX) @063b2540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USAX/82 (__USAX) @063b23f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHSAX/81 (__SHSAX) @063b22a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSAX/80 (__QSAX) @063b2150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SSAX/79 (__SSAX) @063b2000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHASX/78 (__UHASX) @063ace70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQASX/77 (__UQASX) @063acd20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UASX/76 (__UASX) @063acbd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHASX/75 (__SHASX) @063aca80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QASX/74 (__QASX) @063ac930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SASX/73 (__SASX) @063ac7e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHSUB16/72 (__UHSUB16) @063ac690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQSUB16/71 (__UQSUB16) @063ac540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USUB16/70 (__USUB16) @063ac3f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHSUB16/69 (__SHSUB16) @063ac2a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSUB16/68 (__QSUB16) @063ac150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SSUB16/67 (__SSUB16) @063ac000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHADD16/66 (__UHADD16) @063a8e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQADD16/65 (__UQADD16) @063a8d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UADD16/64 (__UADD16) @063a8bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHADD16/63 (__SHADD16) @063a8a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QADD16/62 (__QADD16) @063a8930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SADD16/61 (__SADD16) @063a87e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHSUB8/60 (__UHSUB8) @063a8690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQSUB8/59 (__UQSUB8) @063a8540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__USUB8/58 (__USUB8) @063a83f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHSUB8/57 (__SHSUB8) @063a82a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QSUB8/56 (__QSUB8) @063a8150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SSUB8/55 (__SSUB8) @063a8000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UHADD8/54 (__UHADD8) @0639fe70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UQADD8/53 (__UQADD8) @0639fd20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__UADD8/52 (__UADD8) @0639fbd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SHADD8/51 (__SHADD8) @0639fa80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__QADD8/50 (__QADD8) @0639f930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__SADD8/49 (__SADD8) @0639f7e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FPSCR/48 (__set_FPSCR) @0639f690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FPSCR/47 (__get_FPSCR) @0639f540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FAULTMASK/46 (__set_FAULTMASK) @0639f3f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FAULTMASK/45 (__get_FAULTMASK) @0639f2a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI_MAX/44 (__set_BASEPRI_MAX) @0639f150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI/43 (__set_BASEPRI) @0639f000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_BASEPRI/42 (__get_BASEPRI) @06398e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_fault_irq/41 (__disable_fault_irq) @06398d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_fault_irq/40 (__enable_fault_irq) @06398bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PRIMASK/39 (__set_PRIMASK) @06398a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PRIMASK/38 (__get_PRIMASK) @06398930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_MSP/37 (__set_MSP) @063987e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_MSP/36 (__get_MSP) @06398690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PSP/35 (__set_PSP) @06398540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PSP/34 (__get_PSP) @063983f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_xPSR/33 (__get_xPSR) @063982a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_APSR/32 (__get_APSR) @06398150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_IPSR/31 (__get_IPSR) @06398000
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_CONTROL/30 (__set_CONTROL) @06393e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_CONTROL/29 (__get_CONTROL) @06393d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_irq/28 (__disable_irq) @06393bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_irq/27 (__enable_irq) @06393a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRT/26 (__STRT) @06393930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRHT/25 (__STRHT) @063937e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRBT/24 (__STRBT) @06393690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRT/23 (__LDRT) @06393540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRHT/22 (__LDRHT) @063933f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRBT/21 (__LDRBT) @063932a0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RRX/20 (__RRX) @06393150
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLREX/19 (__CLREX) @06389e70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXW/18 (__STREXW) @06389d20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXH/17 (__STREXH) @06389bd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXB/16 (__STREXB) @06389a80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXW/15 (__LDREXW) @06389930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXH/14 (__LDREXH) @063897e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXB/13 (__LDREXB) @06389690
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLZ/12 (__CLZ) @06389540
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RBIT/11 (__RBIT) @063893f0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ROR/10 (__ROR) @063891f8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REVSH/9 (__REVSH) @063890a8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV16/8 (__REV16) @0634ed20
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV/7 (__REV) @0634ebd0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DMB/6 (__DMB) @0634ea80
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DSB/5 (__DSB) @0634e930
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ISB/4 (__ISB) @0634e7e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__cmsis_start/3 (__cmsis_start) @0634ee70
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_putchar_unlocked/2 (_putchar_unlocked) @06284b28
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_getchar_unlocked/1 (_getchar_unlocked) @062849d8
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__sputc_r/0 (__sputc_r) @062847e0
+  Type: function definition
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: MXC_SYS_In_Crit_Section/141 MXC_SYS_Crit_Exit/140 MXC_SYS_Crit_Enter/139 _mxc_crit_get_state/138 _state/137 ITM_CheckChar/136 ITM_ReceiveChar/135 ITM_SendChar/134 SysTick_Config/133 SCB_GetFPUType/132 ARM_MPU_Load/131 ARM_MPU_OrderedMemcpy/130 ARM_MPU_SetRegionEx/129 ARM_MPU_SetRegion/128 ARM_MPU_ClrRegion/127 ARM_MPU_Disable/126 ARM_MPU_Enable/125 __NVIC_SystemReset/124 __NVIC_GetVector/123 __NVIC_SetVector/122 NVIC_DecodePriority/121 NVIC_EncodePriority/120 __NVIC_GetPriority/119 __NVIC_SetPriority/118 __NVIC_GetActive/117 __NVIC_ClearPendingIRQ/116 __NVIC_SetPendingIRQ/115 __NVIC_GetPendingIRQ/114 __NVIC_DisableIRQ/113 __NVIC_GetEnableIRQ/112 __NVIC_GetPriorityGrouping/110 __NVIC_SetPriorityGrouping/109 __SMMLA/108 __QSUB/107 __QADD/106 __SEL/105 __SMLSLDX/104 __SMLSLD/103 __SMLSDX/102 __SMLSD/101 __SMUSDX/100 __SMUSD/99 __SMLALDX/98 __SMLALD/97 __SMLADX/96 __SMLAD/95 __SMUADX/94 __SMUAD/93 __SXTAB16_RORn/92 __SXTAB16/91 __SXTB16_RORn/90 __SXTB16/89 __UXTAB16/88 __UXTB16/87 __USADA8/86 __USAD8/85 __UHSAX/84 __UQSAX/83 __USAX/82 __SHSAX/81 __QSAX/80 __SSAX/79 __UHASX/78 __UQASX/77 __UASX/76 __SHASX/75 __QASX/74 __SASX/73 __UHSUB16/72 __UQSUB16/71 __USUB16/70 __SHSUB16/69 __QSUB16/68 __SSUB16/67 __UHADD16/66 __UQADD16/65 __UADD16/64 __SHADD16/63 __QADD16/62 __SADD16/61 __UHSUB8/60 __UQSUB8/59 __USUB8/58 __SHSUB8/57 __QSUB8/56 __SSUB8/55 __UHADD8/54 __UQADD8/53 __UADD8/52 __SHADD8/51 __QADD8/50 __SADD8/49 __set_FPSCR/48 __get_FPSCR/47 __set_FAULTMASK/46 __get_FAULTMASK/45 __set_BASEPRI_MAX/44 __set_BASEPRI/43 __get_BASEPRI/42 __disable_fault_irq/41 __enable_fault_irq/40 __set_PRIMASK/39 __get_PRIMASK/38 __set_MSP/37 __get_MSP/36 __set_PSP/35 __get_PSP/34 __get_xPSR/33 __get_APSR/32 __get_IPSR/31 __set_CONTROL/30 __get_CONTROL/29 __disable_irq/28 __enable_irq/27 __STRT/26 __STRHT/25 __STRBT/24 __LDRT/23 __LDRHT/22 __LDRBT/21 __RRX/20 __CLREX/19 __STREXW/18 __STREXH/17 __STREXB/16 __LDREXW/15 __LDREXH/14 __LDREXB/13 __CLZ/12 __RBIT/11 __ROR/10 __REVSH/9 __REV16/8 __REV/7 __DMB/6 __DSB/5 __ISB/4 __cmsis_start/3 _putchar_unlocked/2 _getchar_unlocked/1 __sputc_r/0
+
+Reclaimed Symbol table:
+
+MXC_GPIO_InGet/159 (MXC_GPIO_InGet) @064d8348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 
+  Calls: 
+MXC_GPIO_ClearFlags/158 (MXC_GPIO_ClearFlags) @064d82a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntClear/147 
+  Calls: 
+mxc_assert/157 (mxc_assert) @064d81f8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 PB_IntClear/147 PB_IntDisable/146 PB_IntEnable/145 
+  Calls: 
+MXC_GPIO_DisableInt/156 (MXC_GPIO_DisableInt) @064d8150
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntDisable/146 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_EnableInt/155 (MXC_GPIO_EnableInt) @064d80a8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntEnable/145 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_IntConfig/154 (MXC_GPIO_IntConfig) @064d8000
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_RegisterCallback/153 (MXC_GPIO_RegisterCallback) @064c37e0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 PB_RegisterCallback/143 
+  Calls: 
+num_pbs/152 (num_pbs) @064c06c0
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (read) PB_RegisterCallback/143 (read) PB_RegisterCallbackRiseFall/144 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_IsPressedAny/149 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @064c3738
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Init/142 
+  Calls: 
+pb_pin/150 (pb_pin) @064c0630
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (addr) PB_IntEnable/145 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_Get/148 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+PB_IsPressedAny/149 (PB_IsPressedAny) @064c35e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PB_Get/148 
+PB_Get/148 (PB_Get) @064c32a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: PB_IsPressedAny/149 
+  Calls: MXC_GPIO_InGet/159 mxc_assert/157 
+PB_IntClear/147 (PB_IntClear) @064c3150
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_ClearFlags/158 mxc_assert/157 
+PB_IntDisable/146 (PB_IntDisable) @064c3f18
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_DisableInt/156 mxc_assert/157 
+PB_IntEnable/145 (PB_IntEnable) @064c3dc8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_EnableInt/155 mxc_assert/157 
+PB_RegisterCallbackRiseFall/144 (PB_RegisterCallbackRiseFall) @064c3c78
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_RegisterCallback/143 (PB_RegisterCallback) @064c3b28
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_Init/142 (PB_Init) @064c39d8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: pb_pin/150 (addr) num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_Config/151 
+__NVIC_EnableIRQ/111 (__NVIC_EnableIRQ) @0640a5e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+
+
+Initial Symbol table:
+
+MXC_GPIO_InGet/159 (MXC_GPIO_InGet) @064d8348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 
+  Calls: 
+MXC_GPIO_ClearFlags/158 (MXC_GPIO_ClearFlags) @064d82a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntClear/147 
+  Calls: 
+mxc_assert/157 (mxc_assert) @064d81f8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 PB_IntClear/147 PB_IntDisable/146 PB_IntEnable/145 
+  Calls: 
+MXC_GPIO_DisableInt/156 (MXC_GPIO_DisableInt) @064d8150
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntDisable/146 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_EnableInt/155 (MXC_GPIO_EnableInt) @064d80a8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntEnable/145 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_IntConfig/154 (MXC_GPIO_IntConfig) @064d8000
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_RegisterCallback/153 (MXC_GPIO_RegisterCallback) @064c37e0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 PB_RegisterCallback/143 
+  Calls: 
+num_pbs/152 (num_pbs) @064c06c0
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (read) PB_RegisterCallback/143 (read) PB_RegisterCallbackRiseFall/144 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_IsPressedAny/149 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @064c3738
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Init/142 
+  Calls: 
+pb_pin/150 (pb_pin) @064c0630
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (addr) PB_IntEnable/145 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_Get/148 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+PB_IsPressedAny/149 (PB_IsPressedAny) @064c35e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PB_Get/148 
+PB_Get/148 (PB_Get) @064c32a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: PB_IsPressedAny/149 
+  Calls: MXC_GPIO_InGet/159 mxc_assert/157 
+PB_IntClear/147 (PB_IntClear) @064c3150
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_ClearFlags/158 mxc_assert/157 
+PB_IntDisable/146 (PB_IntDisable) @064c3f18
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_DisableInt/156 mxc_assert/157 
+PB_IntEnable/145 (PB_IntEnable) @064c3dc8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_EnableInt/155 mxc_assert/157 
+PB_RegisterCallbackRiseFall/144 (PB_RegisterCallbackRiseFall) @064c3c78
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_RegisterCallback/143 (PB_RegisterCallback) @064c3b28
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_Init/142 (PB_Init) @064c39d8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: pb_pin/150 (addr) num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_Config/151 
+__NVIC_EnableIRQ/111 (__NVIC_EnableIRQ) @0640a5e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+MXC_GPIO_InGet/159 (MXC_GPIO_InGet) @064d8348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 
+  Calls: 
+MXC_GPIO_ClearFlags/158 (MXC_GPIO_ClearFlags) @064d82a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntClear/147 
+  Calls: 
+mxc_assert/157 (mxc_assert) @064d81f8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Get/148 PB_IntClear/147 PB_IntDisable/146 PB_IntEnable/145 
+  Calls: 
+MXC_GPIO_DisableInt/156 (MXC_GPIO_DisableInt) @064d8150
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntDisable/146 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_EnableInt/155 (MXC_GPIO_EnableInt) @064d80a8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_IntEnable/145 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_IntConfig/154 (MXC_GPIO_IntConfig) @064d8000
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+MXC_GPIO_RegisterCallback/153 (MXC_GPIO_RegisterCallback) @064c37e0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 PB_RegisterCallback/143 
+  Calls: 
+num_pbs/152 (num_pbs) @064c06c0
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (read) PB_RegisterCallback/143 (read) PB_RegisterCallbackRiseFall/144 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_IsPressedAny/149 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @064c3738
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: PB_Init/142 
+  Calls: 
+pb_pin/150 (pb_pin) @064c0630
+  Type: variable
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_Init/142 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (addr) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (addr) PB_IntEnable/145 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_IntClear/147 (read) PB_Get/148 (read) PB_Get/148 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+PB_IsPressedAny/149 (PB_IsPressedAny) @064c35e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PB_Get/148 
+PB_Get/148 (PB_Get) @064c32a0
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: PB_IsPressedAny/149 
+  Calls: MXC_GPIO_InGet/159 mxc_assert/157 
+PB_IntClear/147 (PB_IntClear) @064c3150
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_ClearFlags/158 mxc_assert/157 
+PB_IntDisable/146 (PB_IntDisable) @064c3f18
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_DisableInt/156 mxc_assert/157 
+PB_IntEnable/145 (PB_IntEnable) @064c3dc8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_EnableInt/155 mxc_assert/157 
+PB_RegisterCallbackRiseFall/144 (PB_RegisterCallbackRiseFall) @064c3c78
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_RegisterCallback/143 (PB_RegisterCallback) @064c3b28
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 MXC_GPIO_DisableInt/156 __NVIC_EnableIRQ/111 MXC_GPIO_EnableInt/155 MXC_GPIO_IntConfig/154 MXC_GPIO_RegisterCallback/153 
+PB_Init/142 (PB_Init) @064c39d8
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  References: pb_pin/150 (addr) num_pbs/152 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MXC_GPIO_Config/151 
+__NVIC_EnableIRQ/111 (__NVIC_EnableIRQ) @0640a5e8
+  Type: function definition analyzed
+  Visibility: semantic_interposition
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: PB_RegisterCallbackRiseFall/144 PB_RegisterCallback/143 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+PB_Get/163 (PB_Get) @06398540
+  Type: function definition analyzed
+  Visibility: semantic_interposition public
+  next sharing asm name: 148
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Function PB_Get/163 is inline copy in PB_IsPressedAny/149
+  Clone of PB_Get/148
+  Availability: local
+  Function flags: count:1014686026 (estimated locally) body local
+  Called by: PB_IsPressedAny/149 (inlined) (1014686026 (estimated locally),8.83 per call) 
+  Calls: mxc_assert/157 (334846387 (estimated locally),2.92 per call) MXC_GPIO_InGet/159 (1014686026 (estimated locally),8.83 per call) 
+__NVIC_EnableIRQ.part.0/162 (__NVIC_EnableIRQ.part.0) @063983f0
+  Type: function definition analyzed
+  Visibility: semantic_interposition artificial
+  next sharing asm name: 160
+  References: 
+  Referring: 
+  Function __NVIC_EnableIRQ.part.0/162 is inline copy in PB_RegisterCallbackRiseFall/144
+  Clone of __NVIC_EnableIRQ.part.0/160
+  Availability: local
+  Function flags: count:743802443 (estimated locally) body local split_part
+  Called by: PB_RegisterCallbackRiseFall/144 (inlined) (743802443 (estimated locally),0.69 per call) 
+  Calls: 
+__NVIC_EnableIRQ.part.0/160 (__NVIC_EnableIRQ.part.0) @06398150
+  Type: function definition analyzed
+  Visibility: semantic_interposition prevailing_def_ironly artificial
+  previous sharing asm name: 162
+  References: 
+  Referring: 
+  Function __NVIC_EnableIRQ.part.0/160 is inline copy in PB_RegisterCallback/143
+  Availability: local
+  Function flags: count:743802443 (estimated locally) body local split_part
+  Called by: PB_RegisterCallback/143 (inlined) (743802443 (estimated locally),0.69 per call) 
+  Calls: 
+MXC_GPIO_InGet/159 (MXC_GPIO_InGet) @064d8348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_Get/163 (1014686026 (estimated locally),8.83 per call) PB_Get/148 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+MXC_GPIO_ClearFlags/158 (MXC_GPIO_ClearFlags) @064d82a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_IntClear/147 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+mxc_assert/157 (mxc_assert) @064d81f8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_Get/163 (334846387 (estimated locally),2.92 per call) PB_Get/148 (354334800 (estimated locally),0.33 per call) PB_IntClear/147 (354334800 (estimated locally),0.33 per call) PB_IntDisable/146 (354334800 (estimated locally),0.33 per call) PB_IntEnable/145 (354334800 (estimated locally),0.33 per call) 
+  Calls: 
+MXC_GPIO_DisableInt/156 (MXC_GPIO_DisableInt) @064d8150
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_IntDisable/146 (1073741824 (estimated locally),1.00 per call) PB_RegisterCallbackRiseFall/144 (318772470 (estimated locally),0.30 per call) PB_RegisterCallback/143 (318772470 (estimated locally),0.30 per call) 
+  Calls: 
+MXC_GPIO_EnableInt/155 (MXC_GPIO_EnableInt) @064d80a8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_IntEnable/145 (1073741824 (estimated locally),1.00 per call) PB_RegisterCallbackRiseFall/144 (743802442 (estimated locally),0.69 per call) PB_RegisterCallback/143 (743802442 (estimated locally),0.69 per call) 
+  Calls: 
+MXC_GPIO_IntConfig/154 (MXC_GPIO_IntConfig) @064d8000
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 (743802442 (estimated locally),0.69 per call) PB_RegisterCallback/143 (743802442 (estimated locally),0.69 per call) 
+  Calls: 
+MXC_GPIO_RegisterCallback/153 (MXC_GPIO_RegisterCallback) @064c37e0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_RegisterCallbackRiseFall/144 (318772470 (estimated locally),0.30 per call) PB_RegisterCallbackRiseFall/144 (743802442 (estimated locally),0.69 per call) PB_RegisterCallback/143 (318772470 (estimated locally),0.30 per call) PB_RegisterCallback/143 (743802442 (estimated locally),0.69 per call) 
+  Calls: 
+num_pbs/152 (num_pbs) @064c06c0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_IntClear/147 (read) PB_Get/148 (read) PB_Init/142 (read) PB_RegisterCallback/143 (read) PB_RegisterCallbackRiseFall/144 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IsPressedAny/149 (read) PB_Get/163 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @064c3738
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: PB_Init/142 (955630225 (estimated locally),8.09 per call) 
+  Calls: 
+pb_pin/150 (pb_pin) @064c0630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: PB_IntDisable/146 (read) PB_RegisterCallback/143 (read) PB_IntClear/147 (read) PB_Init/142 (addr) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (addr) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (addr) PB_IntEnable/145 (read) PB_IntEnable/145 (read) PB_IntDisable/146 (read) PB_IntClear/147 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (read) PB_RegisterCallback/143 (addr) PB_RegisterCallbackRiseFall/144 (addr) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_RegisterCallbackRiseFall/144 (read) PB_Get/148 (read) PB_Get/148 (read) PB_Get/163 (read) PB_Get/163 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+PB_IsPressedAny/149 (PB_IsPressedAny) @064c35e8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: num_pbs/152 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:114863530 (estimated locally) body
+  Called by: 
+  Calls: PB_Get/163 (inlined) (1014686026 (estimated locally),8.83 per call) 
+PB_Get/148 (PB_Get) @064c32a0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  previous sharing asm name: 163
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_InGet/159 (1073741824 (estimated locally),1.00 per call) mxc_assert/157 (354334800 (estimated locally),0.33 per call) 
+PB_IntClear/147 (PB_IntClear) @064c3150
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_ClearFlags/158 (1073741824 (estimated locally),1.00 per call) mxc_assert/157 (354334800 (estimated locally),0.33 per call) 
+PB_IntDisable/146 (PB_IntDisable) @064c3f18
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_DisableInt/156 (1073741824 (estimated locally),1.00 per call) mxc_assert/157 (354334800 (estimated locally),0.33 per call) 
+PB_IntEnable/145 (PB_IntEnable) @064c3dc8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (read) pb_pin/150 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_EnableInt/155 (1073741824 (estimated locally),1.00 per call) mxc_assert/157 (354334800 (estimated locally),0.33 per call) 
+PB_RegisterCallbackRiseFall/144 (PB_RegisterCallbackRiseFall) @064c3c78
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 (318772470 (estimated locally),0.30 per call) MXC_GPIO_DisableInt/156 (318772470 (estimated locally),0.30 per call) __NVIC_EnableIRQ.part.0/162 (inlined) (743802443 (estimated locally),0.69 per call) MXC_GPIO_EnableInt/155 (743802442 (estimated locally),0.69 per call) MXC_GPIO_IntConfig/154 (743802442 (estimated locally),0.69 per call) MXC_GPIO_RegisterCallback/153 (743802442 (estimated locally),0.69 per call) 
+PB_RegisterCallback/143 (PB_RegisterCallback) @064c3b28
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: num_pbs/152 (read) pb_pin/150 (addr) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (read) pb_pin/150 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_RegisterCallback/153 (318772470 (estimated locally),0.30 per call) MXC_GPIO_DisableInt/156 (318772470 (estimated locally),0.30 per call) __NVIC_EnableIRQ.part.0/160 (inlined) (743802443 (estimated locally),0.69 per call) MXC_GPIO_EnableInt/155 (743802442 (estimated locally),0.69 per call) MXC_GPIO_IntConfig/154 (743802442 (estimated locally),0.69 per call) MXC_GPIO_RegisterCallback/153 (743802442 (estimated locally),0.69 per call) 
+PB_Init/142 (PB_Init) @064c39d8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition public
+  References: pb_pin/150 (addr) num_pbs/152 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:118111600 (estimated locally) body
+  Called by: 
+  Calls: MXC_GPIO_Config/151 (955630225 (estimated locally),8.09 per call) 
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+MXC_GPIO_InGet/159 (MXC_GPIO_InGet) @064d8348
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_ClearFlags/158 (MXC_GPIO_ClearFlags) @064d82a0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mxc_assert/157 (mxc_assert) @064d81f8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_DisableInt/156 (MXC_GPIO_DisableInt) @064d8150
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_EnableInt/155 (MXC_GPIO_EnableInt) @064d80a8
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_IntConfig/154 (MXC_GPIO_IntConfig) @064d8000
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+MXC_GPIO_RegisterCallback/153 (MXC_GPIO_RegisterCallback) @064c37e0
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+num_pbs/152 (num_pbs) @064c06c0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+MXC_GPIO_Config/151 (MXC_GPIO_Config) @064c3738
+  Type: function
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pb_pin/150 (pb_pin) @064c0630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: semantic_interposition external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+PB_IsPressedAny/149 (PB_IsPressedAny) @064c35e8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_IsPressedAny (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:114863530 (estimated locally)
+  Called by: 
+  Calls: 
+PB_Get/148 (PB_Get) @064c32a0
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_Get (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+PB_IntClear/147 (PB_IntClear) @064c3150
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_IntClear (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+PB_IntDisable/146 (PB_IntDisable) @064c3f18
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_IntDisable (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+PB_IntEnable/145 (PB_IntEnable) @064c3dc8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_IntEnable (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally)
+  Called by: 
+  Calls: 
+PB_RegisterCallbackRiseFall/144 (PB_RegisterCallbackRiseFall) @064c3c78
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_RegisterCallbackRiseFall (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally)
+  Called by: 
+  Calls: 
+PB_RegisterCallback/143 (PB_RegisterCallback) @064c3b28
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_RegisterCallback (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally)
+  Called by: 
+  Calls: 
+PB_Init/142 (PB_Init) @064c39d8
+  Type: function definition analyzed
+  Visibility: externally_visible semantic_interposition asm_written public section:.text.PB_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:118111600 (estimated locally)
+  Called by: 
+  Calls: 
